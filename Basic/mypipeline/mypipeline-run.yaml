@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: my-custom-pipeline-run
+spec:
+  pipelineRef:
+    name: my-custom-pipeline
+  params:
+    - name: salary
+      value: "50000"
+    - name: expenses
+      value: "34999"

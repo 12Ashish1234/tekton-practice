@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: task-1
+spec:
+  steps:
+    - name: loop
+      image: alpine
+      script: |
+        #!/bin/sh
+        n=2
+        while [ $n -le 10 ]
+        do
+          echo "$n seconds"
+          n=$(( n + 1 ))
+        done

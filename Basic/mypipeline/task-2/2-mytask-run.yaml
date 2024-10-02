@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: mytask-2-run
+spec:
+  taskRef:
+    name: task-2
+  params:
+    - name: salary
+      value: 9450
+    - name: expenses
+      value: 3499

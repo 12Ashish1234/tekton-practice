@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: task-2
+spec:
+  params:
+    - name: salary
+      type: string
+    - name: expenses
+      type: string
+  steps:
+    - name: loop
+      image: alpine
+      script: |
+        #!/bin/sh
+        salary=$(params.salary)
+        expenses=$(params.expenses)
+        if [ "$salary" -eq "$expenses" ]; then
+            echo "$salary and $expenses are equal"
+        elif [ "$salary" -ne "$expenses" ]; then
+            echo "$salary and $expenses are not equal"
+        fi
