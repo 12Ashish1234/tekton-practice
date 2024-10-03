@@ -4,8 +4,6 @@ metadata:
   name: hello-listener
 spec:
   serviceAccountName: tekton-robot
-  serviceAnnotations:
-    service.beta.kubernetes.io/serviceport: "8082"
   triggers:
     - name: hello-trigger
       bindings:
